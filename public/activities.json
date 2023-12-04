@@ -1,0 +1,159 @@
+[
+    {
+        "id": 1,
+        "title": "Parasailing",
+        "capacity": 2,
+        "price": 50.0,
+        "duration": "30 minutes",
+        "description": "Soar high above the water with breathtaking views of the coastline.",
+        "ageLimit": 10,
+        "heightRequirement": "Minimum 4 feet",
+        "weightLimit": "100-300 lbs"
+    },
+    {
+        "id": 2,
+        "title": "Jet Skiing",
+        "capacity": 1,
+        "price": 40.0,
+        "duration": "15 minutes",
+        "description": "Experience the thrill of speeding through the waves on a jet ski.",
+        "ageLimit": 16,
+        "heightRequirement": "Minimum 5 feet",
+        "weightLimit": "90-250 lbs"
+    },
+    {
+        "id": 3,
+        "title": "Snorkeling",
+        "capacity": 1,
+        "price": 30.0,
+        "duration": "1 hour",
+        "description": "Explore the vibrant underwater world and discover marine life.",
+        "ageLimit": 8,
+        "heightRequirement": "No height restriction",
+        "weightLimit": "50-250 lbs"
+    },
+    {
+        "id": 4,
+        "title": "Scuba Diving",
+        "capacity": 1,
+        "price": 80.0,
+        "duration": "2 hours",
+        "description": "Dive into the depths and witness the beauty of the ocean floor.",
+        "ageLimit": 18,
+        "heightRequirement": "Minimum 5 feet",
+        "weightLimit": "100-250 lbs"
+    },
+    {
+        "id": 5,
+        "title": "Banana Boat Ride",
+        "capacity": 6,
+        "price": 25.0,
+        "duration": "20 minutes",
+        "description": "Enjoy a fun and thrilling ride on an inflatable banana-shaped boat.",
+        "ageLimit": 6,
+        "heightRequirement": "No height restriction",
+        "weightLimit": "50-500 lbs"
+    },
+    {
+        "id": 6,
+        "title": "Kayaking",
+        "capacity": 2,
+        "price": 35.0,
+        "duration": "1 hour",
+        "description": "Paddle along the coastline and explore scenic waterways in a kayak.",
+        "ageLimit": 12,
+        "heightRequirement": "Minimum 4 feet",
+        "weightLimit": "70-250 lbs"
+    },
+    {
+        "id": 7,
+        "title": "Windsurfing",
+        "capacity": 1,
+        "price": 45.0,
+        "duration": "1 hour",
+        "description": "Harness the wind and ride the waves on a windsurfing board.",
+        "ageLimit": 14,
+        "heightRequirement": "Minimum 5 feet",
+        "weightLimit": "80-200 lbs"
+    },
+    {
+        "id": 8,
+        "title": "Beach Volleyball",
+        "capacity": 12,
+        "price": 20.0,
+        "duration": "1 hour",
+        "description": "Enjoy a friendly game of beach volleyball with friends and family.",
+        "ageLimit": 10,
+        "heightRequirement": "No height restriction",
+        "weightLimit": "N/A"
+    },
+    {
+        "id": 9,
+        "title": "Surfing Lessons",
+        "capacity": 1,
+        "price": 55.0,
+        "duration": "2 hours",
+        "description": "Learn to ride the waves with professional surfing instructors.",
+        "ageLimit": 12,
+        "heightRequirement": "Minimum 4 feet",
+        "weightLimit": "80-200 lbs"
+    },
+    {
+        "id": 10,
+        "title": "Paddleboarding",
+        "capacity": 1,
+        "price": 30.0,
+        "duration": "1 hour",
+        "description": "Glide across the water while standing on a paddleboard.",
+        "ageLimit": 10,
+        "heightRequirement": "Minimum 4 feet",
+        "weightLimit": "60-250 lbs"
+    },
+    {
+        "id": 11,
+        "title": "Beach Yoga",
+        "capacity": 20,
+        "price": 15.0,
+        "duration": "1 hour",
+        "description": "Relax and rejuvenate with a calming yoga session on the beach.",
+        "ageLimit": 16,
+        "heightRequirement": "No height restriction",
+        "weightLimit": "N/A"
+    },
+    {
+        "id": 12,
+        "title": "Sandcastle Building",
+        "capacity": 10,
+        "price": 10.0,
+        "duration": "1 hour",
+        "description": "Unleash your creativity and build impressive sandcastles on the shore.",
+        "ageLimit": 6,
+        "heightRequirement": "No height restriction",
+        "weightLimit": "N/A"
+    },
+    {
+        "id": 13,
+        "title": "Beach Frisbee",
+        "capacity": 8,
+        "price": 15.0,
+        "duration": "1 hour",
+        "description": "Have a blast playing frisbee with friends in the sandy beach breeze.",
+        "ageLimit": 8,
+        "heightRequirement": "No height restriction",
+        "weightLimit": "N/A"
+    },
+    
+    
+    {
+        "id": 16,
+        "title": "Beach Bonfire",
+        "capacity": 15,
+        "price": 50.0,
+        "duration": "3 hours",
+        "description": "Gather around a cozy bonfire for a memorable evening by the beach.",
+        "ageLimit": 12,
+        "heightRequirement": "No height restriction",
+        "weightLimit": "N/A"
+    }
+    
+]

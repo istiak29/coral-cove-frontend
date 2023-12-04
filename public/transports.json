@@ -1,0 +1,130 @@
+[
+    {
+        "id": 1,
+        "title": "Luxury Sedan",
+        "size": "m",
+        "driverName": "John Smith",
+        "capacity": 4,
+        "description": "A comfortable and stylish sedan for a luxurious travel experience."
+    },
+    {
+        "id": 2,
+        "title": "SUV",
+        "size": "lg",
+        "driverName": "Emily Johnson",
+        "capacity": 6,
+        "description": "A spacious SUV suitable for family trips or group travel."
+    },
+    {
+        "id": 3,
+        "title": "Minivan",
+        "size": "m",
+        "driverName": "Carlos Rodriguez",
+        "capacity": 8,
+        "description": "A versatile minivan with ample seating for larger groups or families."
+    },
+    {
+        "id": 4,
+        "title": "Compact Car",
+        "size": "s",
+        "driverName": "Sophia Davis",
+        "capacity": 2,
+        "description": "A small and fuel-efficient compact car for solo or couple travel."
+    },
+    {
+        "id": 5,
+        "title": "Limousine",
+        "size": "lg",
+        "driverName": "Daniel Brown",
+        "capacity": 10,
+        "description": "A luxurious limousine for special occasions and VIP transportation."
+    },
+    {
+        "id": 6,
+        "title": "Van",
+        "size": "lg",
+        "driverName": "Olivia White",
+        "capacity": 12,
+        "description": "A spacious van suitable for group outings, events, or airport transfers."
+    },
+    {
+        "id": 7,
+        "title": "Convertible",
+        "size": "m",
+        "driverName": "Ethan Johnson",
+        "capacity": 2,
+        "description": "A sleek convertible for a stylish and enjoyable driving experience."
+    },
+    {
+        "id": 8,
+        "title": "Electric Car",
+        "size": "s",
+        "driverName": "Ava Martinez",
+        "capacity": 4,
+        "description": "An eco-friendly electric car with low emissions and modern features."
+    },
+    {
+        "id": 9,
+        "title": "Sports Car",
+        "size": "m",
+        "driverName": "Liam Taylor",
+        "capacity": 2,
+        "description": "A high-performance sports car for enthusiasts and thrill-seekers."
+    },
+    {
+        "id": 10,
+        "title": "Shuttle Bus",
+        "size": "lg",
+        "driverName": "Emma Anderson",
+        "capacity": 20,
+        "description": "A large shuttle bus for group transportation, events, or tours."
+    },
+    {
+        "id": 11,
+        "title": "Motorcycle",
+        "size": "s",
+        "driverName": "Noah Garcia",
+        "capacity": 1,
+        "description": "A nimble and efficient motorcycle for solo rides and city commuting."
+    },
+    {
+        "id": 12,
+        "title": "RV",
+        "size": "lg",
+        "driverName": "Mia Harris",
+        "capacity": 6,
+        "description": "A recreational vehicle (RV) for road trips and camping adventures."
+    },
+    {
+        "id": 13,
+        "title": "Bicycle",
+        "size": "s",
+        "driverName": "Logan Martinez",
+        "capacity": 1,
+        "description": "A classic bicycle for eco-friendly urban commuting or leisure rides."
+    },
+    {
+        "id": 14,
+        "title": "Segway",
+        "size": "s",
+        "driverName": "Lucas Garcia",
+        "capacity": 1,
+        "description": "A Segway for convenient and fun personal transportation."
+    },
+    {
+        "id": 15,
+        "title": "Electric Scooter",
+        "size": "s",
+        "driverName": "Harper Turner",
+        "capacity": 1,
+        "description": "An electric scooter for short-distance urban travel."
+    },
+    {
+        "id": 17,
+        "title": "Scooter",
+        "size": "s",
+        "driverName": "Ella Robinson",
+        "capacity": 1,
+        "description": "A compact scooter for quick and agile city commuting."
+    }
+]
