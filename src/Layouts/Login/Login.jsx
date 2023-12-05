@@ -1,12 +1,12 @@
 import axios from "axios";
 import {  useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import  { AuthContext } from "../../UseContext/ContextProvider";
+import { userContext } from "../../UseContext/ContextProvider";
 // import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const Login = () => {
 
-    const { firebaseLogin } = useContext(AuthContext);
+    const {  setName } = useContext(userContext);
 
 
 
@@ -15,54 +15,54 @@ const Login = () => {
         password: ''
     })
 
-    const [errorMessage, setErrorMessage] = useState('')
-    const [success, setSuccess] = useState(false);
 
     const navigate = useNavigate();
 
     axios.defaults.withCredentials = true;
+
     const handleSubmit = e => {
         e.preventDefault();
         e.target.reset()
 
         const form = new FormData(e.currentTarget);
-        console.log(form.get('email'))
 
-
-        
-
-        
-        
         // sign in
         const email = form.get('email');
-        const password = form.get('password');
+        // const password = form.get('password');
 
-        firebaseLogin(email, password)
-            .then(userCredential => {
-                console.log(userCredential.user)
+        console.log(email)
+
+        
                 axios.post('http://localhost:5000/login', values)
                     .then(response => {
                         console.log(response)
-                        setSuccess(true);
+                        
                         if (response.data.Status === "Success") {
-                            navigate('/')
+                            
+
+                            const loginName = response.data.name
+                            console.log(loginName)
+
+                            // const loginUserInfo = { name: loginName }
+
+                            setName(loginName)
+
+                            // local storage
+                            localStorage.setItem('userInfo', JSON.stringify(loginName));
+
+
+                            // set User name from
+
+                            navigate('/');
                         }
 
                     })
                     .then(error => {
-                        setErrorMessage("Wrong Credentials")
                         console.log(error)
                     })
-                // setSuccess(true)
-
 
                 // navigate(location?.state ? location.state : '/')
 
-            })
-            .catch(error => {
-                setErrorMessage(error.message);
-                console.error(error)
-            });
 
 
     }
@@ -101,28 +101,11 @@ const Login = () => {
                                     <span className="label-text text-xl font-bold text-teal-800">Password</span>
                                 </label>
                                 <input onChange={(e) => setValues({ ...values, password: e.target.value })} type="password" name="password" placeholder="password" className="input input-bordered rounded-md bg-gray-100" />
-                                <label className="label">
-                                    {
-                                        errorMessage && (
-                                            <p className="text-red-600 font-bold text-sm">{ errorMessage}</p>
-                                        )
-                                    }
-                                </label>
                             </div>
+
                             <div className="form-control mt-6">
                                 <button className="btn btn-primary bg-gray-800">Login</button>
                             </div>
-
-                            {
-                                success && (
-                                    <div className="toast toast-top toast-center">
-                                        
-                                        <div className="alert alert-success">
-                                            <span>Login successfully.</span>
-                                        </div>
-                                    </div>
-                                )
-                            }
 
                             
                         </form>

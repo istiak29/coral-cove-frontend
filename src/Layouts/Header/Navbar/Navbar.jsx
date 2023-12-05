@@ -1,16 +1,19 @@
 import moment from "moment/moment";
 // import { FaUserAlt } from "react-icons/fa";
-import { Link, NavLink } from "react-router-dom";
-import {  useContext, useEffect, useState } from "react";
-import axios from "axios";
-import { AuthContext } from "../../../UseContext/ContextProvider";
+import { Link, NavLink, useNavigate } from "react-router-dom";
+// import {  useContext, useState } from "react";
+// import axios from "axios";
+import { useContext } from "react";
+import { userContext } from "../../../UseContext/ContextProvider";
 
 
 const Navbar = () => {
 
-    const { user, firebaseLogout } = useContext(AuthContext);
+    const navigate = useNavigate()
 
-    console.log("from nav:", user)
+    const {  name, setName } = useContext(userContext);
+
+    // console.log("from nav:", user)
 
     const navLinks = <>
         <li><NavLink to={'/'}>Home</NavLink></li>
@@ -18,52 +21,45 @@ const Navbar = () => {
         <li><NavLink to={'/pastEvents'}>Past Events</NavLink></li>
     </>
 
-    const [auth, setAuth] = useState(false);
-    const [name, setName] = useState('');
+    // const [auth, setAuth] = useState(false);
+    // const [name, setName] = useState('');
 
     // console.log(user.displayName)
 
-
+    console.log
 
     const handleLogout = () => {
         
+        // After user logs out
+        localStorage.removeItem('userInfo');
+
+        setName(() => {
+            // Set user info to null or an empty object, depending on your state structure
+            return null; // or return {}
+        });
+
+        navigate('/')
         
-        firebaseLogout()
-            .then(userCredential => {
-                console.log(userCredential.user)
 
-                axios.get('http://localhost:5000/logout')
-                    .then((res) => {
-                        if (res.data.Status === "Success") {
-                            // location.reload(true)
-                        } else {
-                            alert("ERROR occurred")
-                        }
 
-                    })
-                    .catch(err => {
-                        console.log(err)
-                    })
+                // axios.get('http://localhost:5000/logout')
+                //     .then((res) => {
+                //         if (res.data.Status === "Success") {
+                //             // location.reload(true)
+                //         } else {
+                //             alert("ERROR occurred")
+                //         }
 
-                // navigate('/')
+                //     })
+                //     .catch(err => {
+                //         console.log(err)
+                //     })
 
-            })
-            .catch(error => {
-                console.error(error);
-            })
-        
+
+            
     }
 
-    // useEffect(() => {
-    //     axios.get('http://localhost:5000')
-    //         .then(res => {
-    //             if (res.data.Status === "Success") {
-    //                 console.log("I am nav:", res);
-    //                 setAuth(true);
-    //                 setName(res.data.name)
-    //             }
-    //         })
-    // }, [])
+
 
     return (
         <div className="my-5">
@@ -87,7 +83,7 @@ const Navbar = () => {
                 <div className="navbar-end">
 
                     {
-                        user ?
+                        name ?
                             <div className="flex gap-3">
                                 <div className="p-2 font-bold border-2 border-emerald-800 rounded-md">{name}</div>
                                 <button onClick={handleLogout} className="btn btn-warning">Logout</button>

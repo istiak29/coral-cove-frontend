@@ -1,17 +1,10 @@
 import axios from "axios";
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { AuthContext } from "../../UseContext/ContextProvider";
 // import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const Register = () => {
 
-    const { createUser } = useContext(AuthContext)
-
-
-    const [errorMessage, setErrorMessage] = useState('');
-
-    const [success, setSuccess] = useState('');
 
     const [values, setValues] = useState({
         name: '',
@@ -24,45 +17,28 @@ const Register = () => {
     const handleSubmit = e => {
         e.preventDefault();
 
-        const form = new FormData(e.currentTarget);
-        const email = form.get('email');
-        const password = form.get('password')
-
-        setErrorMessage('');
-        setSuccess('');
-
+        // const form = new FormData(e.currentTarget);
+        // const email = form.get('email');
+        // const password = form.get('password')
         
 
 
         
-        
-        createUser(email, password)
-            .then(userCredential => {
-                console.log(userCredential.user)
 
                 axios.post('http://localhost:5000/register', values)
                     .then(response => {
                         console.log(response)
 
                         if (response.data.Status === "Success") {
-                            setSuccess("successful")
-                            // navigate('/')
+                            navigate('/login')
                         }
 
                     })
                     .then(error => {
-                        setErrorMessage("Error/ May duplicate email")
                         console.log(error)
                     })
 
                 // navigate(location?.state ? location.state : '/')
-                navigate('/')
-            })
-            .catch(error => {
-                setErrorMessage(error.message)
-                console.error(error)
-            })
-        
 
     }
 
@@ -118,20 +94,7 @@ const Register = () => {
                                 <button className="btn btn-primary bg-gray-800">Register</button>
                             </div>
 
-                            {errorMessage && (
-                                <p className="text-sm font-bold text-red-500">
-                                    {errorMessage}
-                                </p>
-                            )}
-
-                            {success && (
-
-                                <div className="toast toast-top toast-center">
-                                    <div className="alert alert-success text-sm font-bold text-green-500">
-                                        <span>Register successfully.</span>
-                                    </div>
-                                </div>
-                            )}
+                        
 
 
                         </form>
