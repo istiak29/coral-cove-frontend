@@ -5,6 +5,7 @@ import { Link, NavLink, useNavigate } from "react-router-dom";
 // import axios from "axios";
 import { useContext } from "react";
 import { userContext } from "../../../UseContext/ContextProvider";
+import { LuHotel } from "react-icons/lu";
 
 
 const Navbar = () => {
@@ -85,7 +86,11 @@ const Navbar = () => {
                     {
                         name ?
                             <div className="flex gap-3">
+                                <div className=" p-2 font-bold border-2 border-fuchsia-600 rounded-md">
+                                    <Link to={'/usercart'}><p className="flex items-center gap-3"><LuHotel></LuHotel>Your Bookings</p></Link>
+                                </div>
                                 <div className="p-2 font-bold border-2 border-emerald-800 rounded-md">{name}</div>
+
                                 <button onClick={handleLogout} className="btn btn-warning">Logout</button>
                             </div>
                             :

@@ -17,6 +17,8 @@ import Transportation from './Layouts/Page/Transportation';
 import Activities from './Layouts/Page/Activities';
 import Packages from './Layouts/Page/Packages';
 import ContextProvider from './UseContext/ContextProvider';
+import { element } from 'prop-types';
+import UserCart from './Layouts/Page/User/UserCart';
 
 
 
@@ -65,6 +67,10 @@ const router = createBrowserRouter([
         path: '/packages',
         element: <Packages></Packages>,
         // loader: () => fetch('')
+      },
+      {
+        path: '/usercart',
+        element: <UserCart></UserCart>
       }
     ]
   },
