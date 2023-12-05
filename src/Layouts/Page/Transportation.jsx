@@ -1,10 +1,9 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useLoaderData } from "react-router-dom";
+
 
 const Transportation = () => {
 
-    // const transports = useLoaderData();
 
     const [transports, setTransports] = useState([])
 
