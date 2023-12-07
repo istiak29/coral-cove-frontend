@@ -49,23 +49,22 @@ const router = createBrowserRouter([
       },
       {
         path: '/hotel',
-        element: <Hotels></Hotels>,
-        loader: () => fetch('/public/hotels.json')
+        // element: <PrivateRoute><Hotels></Hotels></PrivateRoute>
+        element: <Hotels></Hotels>
       },
       {
         path: '/transportation',
-        element: <Transportation></Transportation>,
+        element: <Transportation></Transportation>
         
       },
       {
         path: '/activities',
-        element: <Activities></Activities>,
-        loader: () => fetch('/public/activities.json')
+        // element: <PrivateRoute><Activities></Activities></PrivateRoute>
+        element: <Activities></Activities>
       },
       {
         path: '/packages',
-        element: <Packages></Packages>,
-        // loader: () => fetch('')
+        element: <Packages></Packages>
       },
       {
         path: '/usercart',

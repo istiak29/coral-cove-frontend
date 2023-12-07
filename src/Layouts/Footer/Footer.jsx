@@ -1,9 +1,16 @@
 import axios from "axios";
 import moment from "moment";
-import {  useState } from "react";
+import {  useContext, useState } from "react";
 import { FaStar } from "react-icons/fa";
+import { userContext } from "../../UseContext/ContextProvider";
 
 const Footer = () => {
+
+    const { userDetails } = useContext(userContext);
+
+    const [disableButton, setDisableButton] = useState(false);
+
+
 
     // const { user } = useContext(UserContext);
     // console.log('footer user:',user)
@@ -29,18 +36,22 @@ const Footer = () => {
     const submitFeedback = (e) => {
         e.preventDefault()
         const currentDate = new Date();
+
+        const userEmail = userDetails.email;
+
         
 
         // console.log(currentDate, typeof(currentDate));
         // console.log(comment, typeof(comment));
         // console.log(rate, typeof (rate))
 
-        axios.post('http://localhost:5000', { comment, rate, currentDate })
+        axios.post('http://localhost:5000', { comment, rate, currentDate, userEmail })
             .then(response => {
                 console.log(response)
 
                 if (response.data.Status === "Success") {
-                    setSuccess(true)
+                    setDisableButton(true);
+                    setSuccess(true);
                 }
 
             })
@@ -48,6 +59,8 @@ const Footer = () => {
 
                 console.error(error)
             })
+    
+        setDisableButton(false)
 
     }
 
@@ -83,7 +96,9 @@ const Footer = () => {
                         <div >
                             <div className="join">
                                 <input onChange={onChangeComment} name="review" type="text" placeholder="write your review" className="input input-bordered join-item" required />
-                                <button className="btn form-control btn-primary join-item">Feedback</button>
+
+                                {/* Feedback button */}
+                                <button type="submit"  className="btn form-control btn-primary join-item" disabled={!userDetails || disableButton}>Feedback</button>
                             </div>
 
                             <div>
@@ -111,7 +126,10 @@ const Footer = () => {
 
                             <h2>
                                 {success && (
-                                    <p className="font-bold text-fuchsia-600">You gave us {rate} <FaStar></FaStar> rating !</p>
+                                    <div className="font-bold text-fuchsia-600 flex items-center gap-1">
+                                        <h4>You gave us {rate}</h4>
+                                        <FaStar></FaStar>
+                                        <h4 className="">rating !</h4></div>
                                 )}
                             </h2>
                         </div>

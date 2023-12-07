@@ -8,12 +8,18 @@ const ContextProvider = ({ children }) => {
 
 
 
-    const [name, setName] = useState()
+    const [userDetails, setUserDetails] = useState()
+
+    const [loading, setLoading] = useState(true);
+
+    
 
     const authInfo = {
         
-        name,
-        setName
+        userDetails,
+        setUserDetails,
+        loading, 
+        setLoading
     }
 
     // In a component that renders in your app
@@ -22,7 +28,9 @@ const ContextProvider = ({ children }) => {
         if (storedUserInfo) {
             const userInfo = JSON.parse(storedUserInfo);
             // Set the user info in your state or context
-            setName(userInfo);
+            setLoading(false);
+
+            setUserDetails(userInfo);
         }
     }, []);
 

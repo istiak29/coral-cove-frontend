@@ -6,7 +6,6 @@ import axios from "axios";
 const Hotels = () => {
 
 
-
     const [hotels, setHotels] = useState([])
 
     useEffect(() => {
@@ -18,11 +17,13 @@ const Hotels = () => {
             .catch(error => console.log(error))
     }, [])
 
+    
+
     return (
         <div className=' grid grid-cols-1  pb-5 lg:grid-cols-3 gap-6'>
             {
-                hotels.map(hotel => <HotelCard
-                    key={hotel.hotel_id}
+                hotels.map((hotel, i) => <HotelCard
+                    key={i}
                     hotel={hotel}
                 ></HotelCard>
                 )}

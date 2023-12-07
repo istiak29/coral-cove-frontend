@@ -1,12 +1,12 @@
 import axios from "axios";
 import {  useContext, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { userContext } from "../../UseContext/ContextProvider";
 // import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const Login = () => {
 
-    const {  setName } = useContext(userContext);
+    const { setUserDetails, setLoading, loading } = useContext(userContext);
 
 
 
@@ -15,7 +15,7 @@ const Login = () => {
         password: ''
     })
 
-
+    const location = useLocation()
     const navigate = useNavigate();
 
     axios.defaults.withCredentials = true;
@@ -40,20 +40,27 @@ const Login = () => {
                         if (response.data.Status === "Success") {
                             
 
-                            const loginName = response.data.name
-                            console.log(loginName)
+                            const loginName = response.data.name;
+                            const loginEmail = response.data.email;
+
+                            const details = {name:loginName, email:loginEmail}
+
+                            console.log(details)
 
                             // const loginUserInfo = { name: loginName }
 
-                            setName(loginName)
+                            setLoading(false);
+                            setUserDetails(details);
+
+                            console.log('login:', loading)
 
                             // local storage
-                            localStorage.setItem('userInfo', JSON.stringify(loginName));
+                            localStorage.setItem('userInfo', JSON.stringify(details));
 
 
                             // set User name from
 
-                            navigate('/');
+                            navigate(location?.state ? location.state : '/')
                         }
 
                     })

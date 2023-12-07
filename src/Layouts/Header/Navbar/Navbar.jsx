@@ -12,9 +12,9 @@ const Navbar = () => {
 
     const navigate = useNavigate()
 
-    const {  name, setName } = useContext(userContext);
+    const { userDetails, setUserDetails, setLoading } = useContext(userContext);
 
-    // console.log("from nav:", user)
+    console.log("from nav:", userDetails)
 
     const navLinks = <>
         <li><NavLink to={'/'}>Home</NavLink></li>
@@ -34,7 +34,8 @@ const Navbar = () => {
         // After user logs out
         localStorage.removeItem('userInfo');
 
-        setName(() => {
+        setUserDetails(() => {
+            setLoading(true);
             // Set user info to null or an empty object, depending on your state structure
             return null; // or return {}
         });
@@ -84,12 +85,12 @@ const Navbar = () => {
                 <div className="navbar-end">
 
                     {
-                        name ?
+                        userDetails ?
                             <div className="flex gap-3">
                                 <div className=" p-2 font-bold border-2 border-fuchsia-600 rounded-md">
-                                    <Link to={'/usercart'}><p className="flex items-center gap-3"><LuHotel></LuHotel>Your Bookings</p></Link>
+                                    <Link to={'/usercart'}><p className="flex items-center gap-3"><LuHotel></LuHotel>Your Bookings Cart</p></Link>
                                 </div>
-                                <div className="p-2 font-bold border-2 border-emerald-800 rounded-md">{name}</div>
+                                <div className="p-2 font-bold border-2 border-emerald-800 rounded-md">{userDetails.name}</div>
 
                                 <button onClick={handleLogout} className="btn btn-warning">Logout</button>
                             </div>

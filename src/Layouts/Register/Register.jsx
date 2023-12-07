@@ -5,6 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 const Register = () => {
 
+    const [errorMessage, setErrorMessage] = useState('');
 
     const [values, setValues] = useState({
         name: '',
@@ -35,12 +36,14 @@ const Register = () => {
 
                     })
                     .then(error => {
+                        setErrorMessage("Inserting data error or duplicate email")
                         console.log(error)
                     })
 
                 // navigate(location?.state ? location.state : '/')
 
     }
+
 
 
     return (
@@ -87,7 +90,11 @@ const Register = () => {
                                 </label>
                                 <input onChange={(e) => setValues({ ...values, password: e.target.value })} type="password" name="password" placeholder="password" className="input input-bordered rounded-md bg-gray-100" />
                                 <label className="label">
-                                    <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
+                                    {
+                                        errorMessage && (
+                                            <p className="label-text-alt text-red-600">{ errorMessage}</p>
+                                        )
+                                    }
                                 </label>
                             </div>
                             <div className="form-control mt-6">
