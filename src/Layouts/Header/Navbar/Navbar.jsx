@@ -90,7 +90,7 @@ const Navbar = () => {
                                 <div className=" p-2 font-bold border-2 border-fuchsia-600 rounded-md">
                                     <Link to={'/usercart'}><p className="flex items-center gap-3"><LuHotel></LuHotel>Your Bookings Cart</p></Link>
                                 </div>
-                                <div className="p-2 font-bold border-2 border-emerald-800 rounded-md">{userDetails.name}</div>
+                                <div className="p-2 font-bold border-2 border-emerald-800 rounded-md"><Link to={'/profile'}>{userDetails.name}</Link></div>
 
                                 <button onClick={handleLogout} className="btn btn-warning">Logout</button>
                             </div>

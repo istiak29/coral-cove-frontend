@@ -10,30 +10,26 @@ const Transportation = () => {
     const [transports, setTransports] = useState([])
 
 
-
     useEffect(() => {
         axios.get('http://localhost:5000/transport')
             .then(res => {
                 console.log(res.data)
                 setTransports(res.data)
-
             })
             .catch(error => console.log(error))
     }, [])
-
 
     const handleBook = (title, book_type, price) => {
 
         const userEmail = userDetails.email;
 
-
-        axios.post('http://localhost:5000/bookings', { title, book_type, price, userEmail} )
+        axios.post('http://localhost:5000/bookings', { title, book_type, price, userEmail })
             .then(res => {
                 console.log(res)
                 if (res.data.Status === "Success") {
                     console.log("we have send your data")
                 }
-                
+
             })
             .catch(error => {
                 console.log(error)

@@ -18,6 +18,8 @@ import Activities from './Layouts/Page/Activities';
 import Packages from './Layouts/Page/Packages';
 import ContextProvider from './UseContext/ContextProvider';
 import UserCart from './Layouts/Page/User/UserCart';
+import UserDetails from './Layouts/Page/User/UserDetails';
+import EditUser from './Layouts/Page/User/EditUser';
 
 
 
@@ -69,6 +71,14 @@ const router = createBrowserRouter([
       {
         path: '/usercart',
         element: <UserCart></UserCart>
+      },
+      {
+        path: '/profile',
+        element: <UserDetails></UserDetails>
+      },
+      {
+        path: '/update/:id',
+        element: <EditUser></EditUser>
       }
     ]
   },

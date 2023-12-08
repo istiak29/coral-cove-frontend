@@ -18,30 +18,17 @@ const Register = () => {
     const handleSubmit = e => {
         e.preventDefault();
 
-        // const form = new FormData(e.currentTarget);
-        // const email = form.get('email');
-        // const password = form.get('password')
-        
-
-
-        
-
-                axios.post('http://localhost:5000/register', values)
-                    .then(response => {
-                        console.log(response)
-
-                        if (response.data.Status === "Success") {
-                            navigate('/login')
-                        }
-
-                    })
-                    .then(error => {
-                        setErrorMessage("Inserting data error or duplicate email")
-                        console.log(error)
-                    })
-
-                // navigate(location?.state ? location.state : '/')
-
+        axios.post('http://localhost:5000/register', values)
+            .then(response => {
+                console.log(response)
+                if (response.data.Status === "Success") {
+                    navigate('/login')
+                }
+            })
+            .then(error => {
+                setErrorMessage("Inserting data error or duplicate email")
+                console.log(error)
+            })
     }
 
 
@@ -72,7 +59,7 @@ const Register = () => {
                                 <label className="label">
                                     <span className="label-text text-xl font-bold text-teal-800">Your Name</span>
                                 </label>
-                                <input onChange={(e)=> setValues({...values, name: e.target.value })} type="text" name="name" placeholder="name" className="input input-bordered rounded-md  bg-green-100" required />
+                                <input onChange={(e) => setValues({ ...values, name: e.target.value })} type="text" name="name" placeholder="name" className="input input-bordered rounded-md  bg-green-100" required />
                             </div>
 
                             {/* email */}
@@ -92,7 +79,7 @@ const Register = () => {
                                 <label className="label">
                                     {
                                         errorMessage && (
-                                            <p className="label-text-alt text-red-600">{ errorMessage}</p>
+                                            <p className="label-text-alt text-red-600">{errorMessage}</p>
                                         )
                                     }
                                 </label>
@@ -101,7 +88,7 @@ const Register = () => {
                                 <button className="btn btn-primary bg-gray-800">Register</button>
                             </div>
 
-                        
+
 
 
                         </form>
