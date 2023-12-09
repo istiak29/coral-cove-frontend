@@ -1,8 +1,9 @@
 import axios from "axios";
 import PropTypes from "prop-types";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { FaStar } from "react-icons/fa6";
 import { userContext } from "../../UseContext/ContextProvider";
+import { Link } from "react-router-dom";
 
 
 const HotelCard = ({ hotel }) => {
@@ -11,9 +12,11 @@ const HotelCard = ({ hotel }) => {
 
     const { userDetails } = useContext(userContext);
 
+    const [success, setSuccess] = useState(false);
+
 
     const handleBook = (title, book_type, price) => {
-        console.log(title)
+        // console.log(title)
 
         const userEmail = userDetails.email;
 
@@ -23,6 +26,7 @@ const HotelCard = ({ hotel }) => {
                 console.log(res)
                 console.log({ book_type, price })
                 if (res.data.Status === "Success") {
+                    setSuccess(true)
                     console.log("we have send your data")
                 }
 
@@ -34,7 +38,7 @@ const HotelCard = ({ hotel }) => {
 
     return (
         <div className=" mt-5 flex justify-center">
-            <div className="card w-3/4 bg-base-100 shadow-xl card-compact px-2">
+            <div className="card  bg-base-100 shadow-xl card-compact px-2">
                 <figure><img src={photo_url} alt="hotel" /></figure>
                 <div className="card-body">
                     <h2 className="font-bold text-2xl">
@@ -53,6 +57,21 @@ const HotelCard = ({ hotel }) => {
                     <div className="card-actions justify-end">
                         <button onClick={() => handleBook(hotel_name, type, price)} type="submit" className="btn form-control btn-primary join-item">Book</button>
                     </div>
+
+                    {
+                        success && (
+                            <div className="toast toast-top toast-center bg-fuchsia-600 rounded-lg">
+                                
+                                <div className="alert alert-success">
+                                    <span>You Item is add to your card.</span>
+                                </div>
+                                <div className=" flex gap-3">
+                                    <button className="btn  btn-accent"><Link to={'/usercart'}>See cart</Link></button>
+                                    {/* <button className="btn  btn-success"><Link to={'/bookings'}>Let Me Book</Link></button> */}
+                                </div>
+                            </div>
+                        )
+                    }
                 </div>
             </div>
         </div>

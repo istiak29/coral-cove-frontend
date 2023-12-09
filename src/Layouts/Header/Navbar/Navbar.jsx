@@ -14,20 +14,11 @@ const Navbar = () => {
 
     const { userDetails, setUserDetails, setLoading } = useContext(userContext);
 
-    console.log("from nav:", userDetails)
-
     const navLinks = <>
         <li><NavLink to={'/'}>Home</NavLink></li>
         <li><NavLink to={'/bookings'}>Bookings</NavLink></li>
-        <li><NavLink to={'/pastEvents'}>Past Events</NavLink></li>
     </>
 
-    // const [auth, setAuth] = useState(false);
-    // const [name, setName] = useState('');
-
-    // console.log(user.displayName)
-
-    console.log
 
     const handleLogout = () => {
         
@@ -36,29 +27,11 @@ const Navbar = () => {
 
         setUserDetails(() => {
             setLoading(true);
-            // Set user info to null or an empty object, depending on your state structure
-            return null; // or return {}
+            return null;
         });
 
         navigate('/')
-        
-
-
-                // axios.get('http://localhost:5000/logout')
-                //     .then((res) => {
-                //         if (res.data.Status === "Success") {
-                //             // location.reload(true)
-                //         } else {
-                //             alert("ERROR occurred")
-                //         }
-
-                //     })
-                //     .catch(err => {
-                //         console.log(err)
-                //     })
-
-
-            
+                    
     }
 
 

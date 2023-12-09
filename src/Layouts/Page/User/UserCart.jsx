@@ -9,6 +9,10 @@ const UserCart = () => {
     
     const { userDetails } = useContext(userContext);
 
+    // const [total, setTotal] = useState(0);
+
+
+
     useEffect(() => {
         // Check if userDetails is truthy and userDetails.email is defined
         if (userDetails && userDetails.email) {
@@ -39,15 +43,22 @@ const UserCart = () => {
                     <h2>Type</h2>
                     <h2>price</h2>
                 </div>
+
+                
+
                 
                 {
-                    carts.map((cart, i) =>
+                    carts.map((cart, i) => 
+                    (
                         <CartCard
-                            key={i}
-                            cart={cart}
-                            index={i}
+                            
+                            key = { i }
+                            cart = { cart }
+                            index = { i }
+                            
                         >
                         </CartCard>
+                    )
                     )
                 }
             </div>

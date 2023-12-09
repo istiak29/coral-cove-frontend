@@ -1,17 +1,33 @@
-import { useContext } from "react";
-import { userContext } from "../../../UseContext/ContextProvider";
+
 import PropTypes from 'prop-types';
 import { MdDelete } from "react-icons/md";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const CartCard = ({ cart, index }) => {
 
-    const { title, book_type, price, user_email } = cart;
 
-    const { userDetails } = useContext(userContext);
-    console.log(userDetails.email, user_email)
+    const { title, book_type, price, booking_id } = cart;
 
-    const handleDelete = () => {
-        
+
+    
+    const navigate = useNavigate();
+
+    // const { userDetails } = useContext(userContext);
+    // console.log(userDetails.email, user_email)
+
+    const handleDelete = (booking_id) => {
+
+        console.log(booking_id);
+
+            axios.delete('http://localhost:5000/bookings/:'+booking_id)
+                .then(res => {
+                    console.log(res) 
+                    navigate('/usercart')
+                })
+                .catch(error => {
+                    console.log(error)
+                })
     }
 
 
@@ -21,7 +37,7 @@ const CartCard = ({ cart, index }) => {
             <div className="grid grid-cols-5 gap-2 p-3">
 
 
-                <h2>{index + 1}</h2>
+                <h2>{index + 1} </h2>
                 
                 <h2>{title}</h2>
 
@@ -29,13 +45,16 @@ const CartCard = ({ cart, index }) => {
                 
                 <h2>{price}</h2>
 
-                <h2 onClick={handleDelete} className="w-1/3 flex gap-2 items-center border p-2 rounded bg-orange-500">
+                <button onClick={() => handleDelete(booking_id)} className="btn btn-error flex gap-2 items-center bg-orange-500">
                     <MdDelete></MdDelete>
                     Delete
-                </h2>
+                </button>
             </div>
 
-
+            <div className='flex'>
+                {/* <h2>Total Price: { }</h2> */}
+            </div>
+            
         </div>
     );
 };

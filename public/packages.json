@@ -1,0 +1,72 @@
+[
+    {
+        "title": "Coastal Escape Photoshoot",
+        "duration": "1 hour",
+        "image": "/images/coastal_escape.jpg",
+        "price": 99.99,
+        "shortDescription": "Capture the beauty of coastal landscapes with a photoshoot by the sea. Ideal for beach lovers and travel enthusiasts."
+    },
+    {
+        "title": "Mountain Retreat Photography",
+        "duration": "8 hours",
+        "image": "https://i.ibb.co/xCp43xk/Mountain-Retreat-Photography.jpg",
+        "price": 899.99,
+        "shortDescription": "Immerse yourself in the serenity of mountain landscapes. This package covers a full day of photography in the hills."
+    },
+    {
+        "title": "Sunset Adventure Session",
+        "duration": "2 hours",
+        "image": "https://i.ibb.co/9GXhBQ7/Sunset-Adventure-Session.jpg",
+        "price": 149.99,
+        "shortDescription": "Embark on a photography adventure during the golden hours of sunset. Capture the magic of twilight in unique locations."
+    },
+    {
+        "title": "Family Expedition Memories",
+        "duration": "3 hours",
+        "image": "https://i.ibb.co/KsDzTnK/Family-Expedition-Memories.jpg",
+        "price": 249.99,
+        "shortDescription": "Create lasting memories with a family photoshoot amidst scenic landscapes. Perfect for adventurous families."
+    },
+    {
+        "title": "Professional Cliffside Portraits",
+        "duration": "30 minutes",
+        "image": "https://i.ibb.co/xYbsZ9D/Cliffside-Portraits.jpg",
+        "price": 79.99,
+        "shortDescription": "Elevate your professional image with cliffside portraits. Stunning backdrops for an impactful and unique look."
+    },
+    {
+        "title": "Beachside Pet Photography",
+        "duration": "1 hour",
+        "image": "https://i.ibb.co/hM4dvg6/Beachside-Pet.jpg",
+        "price": 119.99,
+        "shortDescription": "Celebrate your pets by the beach with a dedicated photoshoot. Capture their playful moments against the ocean backdrop."
+    },
+    {
+        "title": "Seasonal Coastal Mini Sessions",
+        "duration": "45 minutes",
+        "image": "https://i.ibb.co/9vRbD5t/Seasonal-Coastal.jpg",
+        "price": 59.99,
+        "shortDescription": "Experience the charm of coastal seasons with themed mini sessions. Limited-time offers for a coastal-inspired look."
+    },
+    {
+        "title": "Hilltop Maternity Adventure",
+        "duration": "2 hours",
+        "image": "https://i.ibb.co/VqYWsVC/Hilltop-Maternity.jpg",
+        "price": 179.99,
+        "shortDescription": "Capture the joy of pregnancy amidst hilltop vistas. A scenic adventure for expecting mothers and couples."
+    },
+    {
+        "title": "Traveler's Corporate Event Coverage",
+        "duration": "4 hours",
+        "image": "https://i.ibb.co/x76sYFC/Traveler-s-Corporate-Event-Coverage.jpg",
+        "price": 349.99,
+        "shortDescription": "Document corporate events with a touch of travel. Ideal for businesses hosting events in picturesque locations."
+    },
+    {
+        "title": "Fine Art Journey Experience",
+        "duration": "1.5 hours",
+        "image": "https://i.ibb.co/5YTRKhb/Fine-Art-Journey.jpg",
+        "price": 129.99,
+        "shortDescription": "Embark on a visual journey with a fine art photography experience. Capture artistic moments in diverse travel-inspired settings."
+    }
+]

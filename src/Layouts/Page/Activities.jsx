@@ -16,7 +16,7 @@ const Activities = () => {
     useEffect(() => {
         axios.get('http://localhost:5000/activities')
             .then(res => {
-                console.log(res)
+                // console.log(res)
                 setActivities(res.data)
             })
             .catch(error => console.log(error))
@@ -29,8 +29,8 @@ const Activities = () => {
 
         axios.post('http://localhost:5000/bookings', { title, book_type, price, userEmail })
             .then(res => {
-                console.log(res)
-                console.log({ title, book_type, price })
+                // console.log(res)
+                // console.log({ title, book_type, price })
                 if (res.data.Status === "Success") {
                     console.log("we have send your data")
                 }

@@ -20,6 +20,7 @@ import ContextProvider from './UseContext/ContextProvider';
 import UserCart from './Layouts/Page/User/UserCart';
 import UserDetails from './Layouts/Page/User/UserDetails';
 import EditUser from './Layouts/Page/User/EditUser';
+import PrivateRoute from './PrivateRoute/PrivateRoute';
 
 
 
@@ -47,7 +48,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/bookings',
-        element: <Bookings></Bookings>
+        element: <PrivateRoute><Bookings></Bookings></PrivateRoute>
       },
       {
         path: '/hotel',

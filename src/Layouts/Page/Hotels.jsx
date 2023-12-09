@@ -11,7 +11,7 @@ const Hotels = () => {
     useEffect(() => {
         axios.get('http://localhost:5000/hotels')
             .then(res => {
-                console.log(res)
+                // console.log(res)
                 setHotels(res.data)
             })
             .catch(error => console.log(error))

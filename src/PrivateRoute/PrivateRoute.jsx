@@ -1,23 +1,24 @@
 import { useContext } from "react";
 import  { userContext } from "../UseContext/ContextProvider";
-import { Navigate, useLocation } from "react-router-dom";
+import { Navigate } from "react-router-dom";
+// import {  useLocation } from "react-router-dom";
 import PropTypes from 'prop-types';
 
 
 const PrivateRoute = ({ children }) => {
     
-    const { userDetails, loading,} = useContext(userContext);
+    const { userDetails} = useContext(userContext);
 
-    const location = useLocation();
+    // const location = useLocation();
     
-    console.log('Loading: ', loading)
+    // console.log('Loading: ', loading)
 
-    if (loading) {
-        return <div className="loading loading-spinner text-warning  w-1/3 mx-auto ">
+    // if (!userDetails) {
+    //     return <div className="loading loading-spinner text-warning  w-1/3 mx-auto ">
                 
-            </div>
+    //         </div>
         
-    }
+    // }
 
     if (userDetails) {
         return children
@@ -30,7 +31,7 @@ const PrivateRoute = ({ children }) => {
 
     return (
         <div>
-            <Navigate state={location.pathname} to={'/login'}></Navigate>
+            <Navigate to={'/'}></Navigate>
         </div>
     );
 };
